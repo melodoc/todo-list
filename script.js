@@ -24,6 +24,7 @@ class Todo {
     createItem(todo) {
         const li = document.createElement('li');
         li.classList.add('todo-item');
+        li.key = todo.key;
         li.insertAdjacentHTML('beforeend', `
             <span class="text-todo">${todo.value}</span>
                 <div class="todo-buttons">
@@ -48,14 +49,50 @@ class Todo {
                 completed: false,
                 key: this.generateKey(),
             };
-
             this.todoData.set(newTodo.key, newTodo);
             this.render();
+            this.input.value = '';
+        } else if (this.input.value.trim() === '') {
+            alert('Пустое дело добавить нельзя');
         }
     }
 
     generateKey() {
         return Math.random().toString(36).slice(2, 15) + Math.random().toString(36).slice(2, 15);
+    }
+
+    deleteItem(key) {
+        this.todoData.delete(key);
+        this.render();
+    }
+
+    completedItem(targetKey) {
+        this.todoData.forEach((value, key) => {
+            if (targetKey === key && value.completed === false) {
+                value.completed = true;
+            } else if (targetKey === key && value.completed === true) {
+                value.completed = false;
+            }
+        });
+
+        this.render();
+    }
+
+
+    handler() {
+        document.querySelector('.todo-container').addEventListener('click', event => {
+
+            event.preventDefault();
+            const target = event.target;
+
+            if (target.matches('.todo-complete')) {
+                target.key = target.closest('.todo-item').key;
+                this.completedItem(target.key);
+            } else if (target.matches('.todo-remove')) {
+                target.key = target.closest('.todo-item').key;
+                this.deleteItem(target.key);
+            }
+        });
     }
 
     init() {
@@ -67,3 +104,4 @@ class Todo {
 const todo = new Todo('.todo-control', '.header-input', '.todo-list', '.todo-completed');
 
 todo.init();
+todo.handler();
