@@ -1,18 +1,22 @@
-'use strict';
+
 
 const todoControl = document.querySelector('.todo-control'),
     headerInput = document.querySelector('.header-input'),
     todoList = document.querySelector('.todo-list'),
     todoCompleted = document.querySelector('.todo-completed');
 
-const todoData = [];
+const saveToLocalStorage = function() {
+    localStorage.setItem('key', JSON.stringify(todoData));
+};
 
-const render = function () {
+let todoData = [];
+
+const render = function() {
 
     todoList.textContent = '';
     todoCompleted.textContent = '';
 
-    todoData.forEach(function (item) {
+    todoData.forEach(item => {
         const li = document.createElement('li');
         li.classList.add('todo-item');
 
@@ -29,15 +33,24 @@ const render = function () {
             todoList.append(li);
         }
 
-        const  btnTodoComplete = li.querySelector('.todo-complete');
-        btnTodoComplete.addEventListener('click', function () {
+        const btnTodoComplete = li.querySelector('.todo-complete');
+        btnTodoComplete.addEventListener('click', () => {
             item.completed = !item.completed;
+            saveToLocalStorage();
+            render();
+        });
+
+        const btnRemove = li.querySelector('.todo-remove');
+        btnRemove.addEventListener('click', () => {
+            const index = todoData.indexOf(item);
+            todoData.splice(index, 1);
+            saveToLocalStorage();
             render();
         });
     });
 };
 
-todoControl.addEventListener('submit', function (event) {
+todoControl.addEventListener('submit', event => {
     event.preventDefault();
 
     const newToDo = {
@@ -45,9 +58,17 @@ todoControl.addEventListener('submit', function (event) {
         completed: false,
     };
 
-    todoData.push(newToDo);
+    if (headerInput.value.trim() !== '') {
+        todoData.push(newToDo);
+        saveToLocalStorage();
+    }
+
+    headerInput.value = '';
 
     render();
 });
 
-render();
+if (localStorage.getItem('key')) {
+    todoData = JSON.parse(localStorage.getItem('key'));
+    render();
+}
