@@ -1,0 +1,81 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+        "stylelint-order"
+    ],
+    "rules": {
+        "order/order": [
+            "custom-properties",
+            "declarations"
+        ],
+        "order/properties-order": [
+            {
+                "groupName": "position",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "position",
+                    "top",
+                    "right",
+                    "bottom",
+                    "left",
+                    "z-index"
+                ]
+            },
+            {
+                "groupName": "block-model",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "display",
+                    "float",
+                    "width",
+                    "height",
+                    "margin",
+                    "padding"
+                ]
+            },
+            {
+                "groupName": "typography",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "font-family",
+                    "font-style",
+                    "font-size",
+                    "line-height",
+                    "font-weight",
+                    "text-align",
+                    "color"
+                ]
+            },
+            {
+                "groupName": "decoration",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "background-color",
+                    "border",
+                    "border-radius",
+                    "opacity"
+                ]
+            },
+            {
+                "groupName": "animation",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "transition"
+                ]
+            },
+            {
+                "groupName": "other",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "will-change"
+                ]
+            }
+        ]
+    }
+}

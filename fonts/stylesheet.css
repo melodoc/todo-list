@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Monda;
+  font-style: normal;
+  font-weight: bold;
+  src: url("Monda-Bold.eot");
+  src:
+    local("Monda Bold"),
+    local("Monda-Bold"),
+    url("Monda-Bold.eot?#iefix") format("embedded-opentype"),
+    url("Monda-Bold.woff2") format("woff2"),
+    url("Monda-Bold.woff") format("woff"),
+    url("Monda-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Monda;
+  font-style: normal;
+  font-weight: normal;
+  src: url("Monda-Regular.eot");
+  src:
+    local("Monda Regular"),
+    local("Monda-Regular"),
+    url("Monda-Regular.eot?#iefix") format("embedded-opentype"),
+    url("Monda-Regular.woff2") format("woff2"),
+    url("Monda-Regular.woff") format("woff"),
+    url("Monda-Regular.ttf") format("truetype");
+}

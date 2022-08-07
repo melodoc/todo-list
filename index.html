@@ -6,53 +6,37 @@
 	<meta name="viewport"
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>ToDo</title>
-
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="script.js" defer></script>
+	<title>ToDo app</title>
+	<link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body>
+<body class="body">
+	<main class="main">
+		<h1 class="caption">todo</h1>
+		<div class="main-container">
+			<section class="section">
+				<form class="todo-control">
+					<label class="section-label" >
+						<input class="section-input" type="text" placeholder="Create a new todo...">
+						<button class="section-button" id="add"></button>
+					</label>
+				</form>
+			</section>
 
-	<header class="header">
-		<form class="todo-control">
-			<label><input class="header-input" type="text" placeholder="Какие планы?"></label>
-			<button class="header-button" id="add"></button>
-		</form>
-	</header>
+			<section class="todo-container">
+				<ul class="todo todo-list" id="todo">
+					<li class="todo-item">
+					</li>
+				</ul>
 
-	<div class="todo-container">
-
-		<ul class="todo todo-list" id="todo">
-			<li class="todo-item">
-				<span class="text-todo">Выполнить задание</span>
-				<div class="todo-buttons">
-					<button class="todo-remove"></button>
-					<button class="todo-complete"></button>
-				</div>
-			</li>
-			<li class="todo-item">
-				<span class="text-todo">Выполнить усложненное задание</span>
-				<div class="todo-buttons">
-					<button class="todo-edit"></button>
-					<button class="todo-remove"></button>
-					<button class="todo-complete"></button>
-				</div>
-			</li>
-		</ul>
-
-		<ul class="todo todo-completed" id="completed">
-			<li class="todo-item">
-				<span class="text-todo">Прочитать про классы</span>
-				<div class="todo-buttons">
-					<button class="todo-remove"></button>
-					<button class="todo-complete"></button>
-				</div>
-			</li>
-		</ul>
-	</div>
-
+				<ul class="todo todo-completed" id="completed">
+					<li class="todo-item">
+					</li>
+				</ul>
+			</section>
+		</div>
+	</main>
+	<script type="module" src="./script/script.js" defer></script>
 </body>
 
 </html>

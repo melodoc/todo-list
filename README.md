@@ -1,28 +1,18 @@
-# ToDo List
+# Project: ToDo app
 
-## Brief description
+## Link
 
-ToDo List is the MVP version of Reminders. With the help of ToDo List, the user can do the following tasks:
-+ create tasks;
-+ mark tasks as done;
-+ delete tasks.
+[ToDo app](https://melodoc.github.io/finance-dashboard/)
 
-## Purpose of implementation
+## Description
 
-This task is intended for training the topic of localStorage, sessionStorage, cookie anf OOP.
+ToDo helps the user create tasks, mark tasks as done, delete them and store them in localStorage.
 
+[Design](https://www.figma.com/community/file/1124486462945035586)
 
-## Specification
+## Created with
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ffd24a?style=for-the-badge&logo=javascript&logoColor=white)
 
-Implement the ToDo List as a class.
+## The authors
 
-_To complete the task it is possible to use a ready-made HTML._
-
-> What the program should do:
-> 1) Adding new cases by pressing ENTER and the PLUS button.
-> 2) Mark completed cases, completed cases should be moved to the block with completed cases.
-> 3) Inform the user (in any way) that an empty case cannot be added.
-> 4) The input field should be cleared after adding a case.
-> 5) Delete cases on the BASKET button.
-> 6) Save data about cases in localStorage (for example, as an array).
-> 7) Cases from localStorage should be loaded automatically when the page is loaded.
+Designed by [Michael Liendo](https://www.figma.com/@michaelliendo), implemented by [melodoc](https://github.com/melodoc)
