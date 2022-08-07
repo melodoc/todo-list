@@ -124,14 +124,10 @@ p {
   appearance: none;
 }
 
+.section-button:active,
 .section-button:hover,
 .section-button:focus {
   cursor: pointer;
-  opacity: 0.6;
-  transition: 0.05s ease-in-out;
-}
-
-.section-button:active {
   outline-offset: 2px;
   box-shadow: 0 0 25px #3ec827;
   transition: 0.05s ease-in-out;
@@ -190,14 +186,10 @@ p {
   appearance: none;
 }
 
+.todo-buttons button:active,
 .todo-buttons button:hover,
-.todo-buttons button:focus {
+.todo-buttons button:focus{
   cursor: pointer;
-  opacity: 0.4;
-  transition: 0.05s ease-in-out;
-}
-
-.todo-buttons button:active {
   background-color: #452271;
   transition: 0.05s ease-in-out;
   box-shadow: 0 0 25px #9800ffb8;
