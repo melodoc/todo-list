@@ -2,7 +2,7 @@
 
 ## Link
 
-[ToDo app](https://melodoc.github.io/finance-dashboard/)
+[ToDo app](https://melodoc.github.io/todo-list/)
 
 ## Description
 
