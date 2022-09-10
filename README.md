@@ -1,8 +1,8 @@
-# Project: ToDo app
+# Project: ToDo list app
 
 ## Link
 
-[ToDo app](https://melodoc.github.io/todo-list/)
+[ToDo list app](https://melodoc.github.io/todo-list/)
 
 ## Description
 
